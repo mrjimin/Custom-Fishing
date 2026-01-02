@@ -26,8 +26,9 @@ public final class BetonQuestHook {
 
     public static void register() {
         BetonQuest bq = BetonQuest.getInstance();
-        bq.getQuestRegistries().objective().register("customfishing_loot", new FishingIdObjectiveFactory());
-        bq.getQuestRegistries().objective().register("customfishing_group", new FishingGroupObjectiveFactory());
-        bq.getQuestRegistries().objective().register("customfishing_totem_activate", new TotemActivateObjectiveFactory());
+        bq.getQuestRegistries().objective().register("customfish_catch_fish", new FishingIdObjectiveFactory());
+        bq.getQuestRegistries().objective().register("customfish_catch_group", new FishingGroupObjectiveFactory());
+        // fixed
+        // bq.getQuestRegistries().objective().register("customfishing_totem_activate", new TotemActivateObjectiveFactory());
     }
 }

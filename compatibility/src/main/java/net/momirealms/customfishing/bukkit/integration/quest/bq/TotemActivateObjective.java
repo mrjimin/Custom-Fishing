@@ -3,6 +3,7 @@
 package net.momirealms.customfishing.bukkit.integration.quest.bq;
 
 import net.momirealms.customfishing.api.event.TotemActivateEvent;
+import org.betonquest.betonquest.api.CountingObjective;
 import org.betonquest.betonquest.api.DefaultObjective;
 import org.betonquest.betonquest.api.QuestException;
 import org.betonquest.betonquest.api.instruction.Argument;
@@ -12,15 +13,21 @@ import org.betonquest.betonquest.api.profile.Profile;
 import org.bukkit.World;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.jetbrains.annotations.Nullable;
 
-public class TotemActivateObjective extends DefaultObjective implements Listener {
+public class TotemActivateObjective extends CountingObjective implements Listener {
 
     private final Argument<World> world;
 
-    public TotemActivateObjective(final Instruction instruction, final Argument<World> world) throws QuestException {
-        super(instruction);
+    public TotemActivateObjective(
+            final Instruction instruction,
+            final Argument<Number> targetAmount,
+            final Argument<World> world
+    ) throws QuestException {
+        super(instruction, targetAmount, "customfishcatch_fish");
         this.world = world;
     }
+
 
     @EventHandler(ignoreCancelled = true)
     public void onTotemActivateEvent(TotemActivateEvent event) {
@@ -34,13 +41,4 @@ public class TotemActivateObjective extends DefaultObjective implements Listener
         completeObjective(profile);
     }
 
-    @Override
-    public String getDefaultDataInstruction(Profile profile) throws QuestException {
-        return "";
-    }
-
-    @Override
-    public String getProperty(String s, Profile profile) throws QuestException {
-        return "";
-    }
 }

@@ -17,7 +17,7 @@ public class FishingIdObjective extends CountingObjective implements Listener {
 
     public FishingIdObjective(final Instruction instruction, final Argument<Number> targetAmount,
                               final Argument<List<String>> identifiers) throws QuestException {
-        super(instruction, targetAmount, "custom_fish_to_fish");
+        super(instruction, targetAmount, "customfish.fish_caught");
         this.identifiers = identifiers;
     }
 

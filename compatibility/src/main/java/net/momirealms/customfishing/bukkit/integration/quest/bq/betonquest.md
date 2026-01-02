@@ -25,7 +25,7 @@ objectives:
 This mean that you have to catch 3 "tuna\_fish"
 
 # message
-input yourServer/plugins/BetonQuest/lang/.yml
+Location: ``yourServer/plugins/BetonQuest/lang/.yml``
 
 ```yaml
 customfish:

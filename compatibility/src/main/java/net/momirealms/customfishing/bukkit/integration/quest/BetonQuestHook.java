@@ -19,7 +19,7 @@ package net.momirealms.customfishing.bukkit.integration.quest;
 
 import net.momirealms.customfishing.bukkit.integration.quest.bq.FishingGroupObjectiveFactory;
 import net.momirealms.customfishing.bukkit.integration.quest.bq.FishingIdObjectiveFactory;
-import net.momirealms.customfishing.bukkit.integration.quest.bq.TotemActivateObjectiveFactory;
+// import net.momirealms.customfishing.bukkit.integration.quest.bq.TotemActivateObjectiveFactory;
 import org.betonquest.betonquest.BetonQuest;
 
 public final class BetonQuestHook {

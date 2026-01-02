@@ -4,7 +4,7 @@ import net.momirealms.customfishing.api.event.FishingResultEvent;
 import org.betonquest.betonquest.api.CountingObjective;
 import org.betonquest.betonquest.api.QuestException;
 import org.betonquest.betonquest.api.instruction.Instruction;
-import org.betonquest.betonquest.api.instruction.variable.Variable;
+import org.betonquest.betonquest.api.instruction.Argument;
 import org.betonquest.betonquest.api.profile.OnlineProfile;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -13,10 +13,10 @@ import java.util.List;
 
 public class FishingIdObjective extends CountingObjective implements Listener {
 
-    private final Variable<List<String>> identifiers;
+    private final Argument<List<String>> identifiers;
 
-    public FishingIdObjective(final Instruction instruction, final Variable<Number> targetAmount,
-                              final Variable<List<String>> identifiers) throws QuestException {
+    public FishingIdObjective(final Instruction instruction, final Argument<Number> targetAmount,
+                              final Argument<List<String>> identifiers) throws QuestException {
         super(instruction, targetAmount, "custom_fish_to_fish");
         this.identifiers = identifiers;
     }

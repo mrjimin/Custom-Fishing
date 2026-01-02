@@ -83,4 +83,7 @@ public class TotemActivateEvent extends PlayerEvent implements Cancellable {
     public static HandlerList getHandlerList() {
         return handlerList;
     }
+
+    public Player ok() {
+    }
 }

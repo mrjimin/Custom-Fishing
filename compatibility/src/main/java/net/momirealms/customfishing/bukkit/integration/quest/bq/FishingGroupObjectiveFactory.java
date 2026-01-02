@@ -1,10 +1,9 @@
 package net.momirealms.customfishing.bukkit.integration.quest.bq;
 
-import org.betonquest.betonquest.api.Objective;
+import org.betonquest.betonquest.api.DefaultObjective;
 import org.betonquest.betonquest.api.QuestException;
+import org.betonquest.betonquest.api.instruction.Argument;
 import org.betonquest.betonquest.api.instruction.Instruction;
-import org.betonquest.betonquest.api.instruction.argument.Argument;
-import org.betonquest.betonquest.api.instruction.variable.Variable;
 import org.betonquest.betonquest.api.quest.objective.ObjectiveFactory;
 
 import java.util.List;
@@ -15,9 +14,9 @@ public class FishingGroupObjectiveFactory implements ObjectiveFactory {
     }
 
     @Override
-    public Objective parseInstruction(final Instruction instruction) throws QuestException {
-        final Variable<List<String>> names = instruction.getList(Argument.STRING);
-        final Variable<Number> targetAmount = instruction.getValue("amount", Argument.NUMBER_NOT_LESS_THAN_ONE, 1);
-        return new FishingIdObjective(instruction, targetAmount, names);
+    public DefaultObjective parseInstruction(final Instruction instruction) throws QuestException {
+        final Argument<List<String>> names = instruction.string().list().get();
+        final Argument<Number> targetAmount = instruction.number().get("amount", 1);
+        return new FishingGroupObjective(instruction, targetAmount, names);
     }
 }

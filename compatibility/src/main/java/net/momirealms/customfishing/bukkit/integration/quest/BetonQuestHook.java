@@ -19,6 +19,7 @@ package net.momirealms.customfishing.bukkit.integration.quest;
 
 import net.momirealms.customfishing.bukkit.integration.quest.bq.FishingGroupObjectiveFactory;
 import net.momirealms.customfishing.bukkit.integration.quest.bq.FishingIdObjectiveFactory;
+import net.momirealms.customfishing.bukkit.integration.quest.bq.TotemActivateObjectiveFactory;
 import org.betonquest.betonquest.BetonQuest;
 
 public final class BetonQuestHook {
@@ -27,5 +28,6 @@ public final class BetonQuestHook {
         BetonQuest bq = BetonQuest.getInstance();
         bq.getQuestRegistries().objective().register("customfishing_loot", new FishingIdObjectiveFactory());
         bq.getQuestRegistries().objective().register("customfishing_group", new FishingGroupObjectiveFactory());
+        bq.getQuestRegistries().objective().register("customfishing_totem_activate", new TotemActivateObjectiveFactory());
     }
 }
